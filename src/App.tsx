@@ -27,11 +27,7 @@ const App = (): JSX.Element => {
   //add new todo
   //& assigning ~ complete
   const addTodo = (text: string): void => {
-    const newTodos: ITodo[] = [...todos,
-    {
-      complete: false,
-      text
-    }]
+    const newTodos: ITodo[] = [...todos, { complete: false, text }]
     setTodos(newTodos);
   }
 
