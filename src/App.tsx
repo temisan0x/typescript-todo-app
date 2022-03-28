@@ -27,8 +27,8 @@ const App = (): JSX.Element => {
   //add new todo
   //& assigning ~ complete
   const addTodo = (text: string): void => {
-    const newTodos: ITodo[] = [...todos, { complete: false, text }]
-    setTodos(newTodos);
+    const newTodos: ITodo[] = [...todos, { complete: false, text }]//passed empty todo array
+    setTodos(newTodos); //whatever value passed from the todos array gets stored here.
   }
 
   //clone of the old todo
