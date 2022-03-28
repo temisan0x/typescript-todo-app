@@ -36,12 +36,12 @@ const App = (): JSX.Element => {
   //clone of the old todo
   const completeTodo = (index: number): void => {
     const newTodos: ITodo[] = [...todos]
-    newTodos[index].complete = !newTodos[index].complete
+    newTodos[index].complete = !newTodos[index].complete //toggle value & pass it to setTodos
     setTodos(newTodos)
   }
 
   const deleteTodo = (index: number): void => {
-    const newTodos: ITodo[] = [...todos]
+    const newTodos: ITodo[] = [...todos] //mutate todo
     newTodos.splice(index, 1);
     setTodos(newTodos);
   }
