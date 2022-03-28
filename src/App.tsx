@@ -12,7 +12,7 @@ type FormElem = React.FormEvent<HTMLFormElement>
 
 const App = (): JSX.Element => {
   //hooks
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>(''); //passed in a "string" generic 
   const [todos, setTodos] = useState<ITodo[]>([]);
 
   //handle form submit
