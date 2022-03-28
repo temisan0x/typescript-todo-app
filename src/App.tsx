@@ -8,7 +8,7 @@ interface ITodo {
 }
 
 //form alias ~  type references another type 
-type FormElem = React.FormEvent<HTMLFormElement>
+type FormElem = React.FormEvent<HTMLFormElement> //generic alias for eventt
 
 const App = (): JSX.Element => {
   //hooks
