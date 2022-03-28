@@ -16,20 +16,22 @@ const App = (): JSX.Element => {
   //hooks
   const [value, setValue] = useState<string>(''); //passed in a "string" generic 
   const [todos, setTodos] = useState<ITodo[]>([]);  //passed ITodo interface as generic
-
-  //handle form submit
-  const handleSubmit = (e: FormElem): void => {
-    setValue('');
-    addTodo(value) //value is added to our addTodo array.
-    e.preventDefault();
-  }
-
+  console.log(todos);
+  
   //add new todo
   //& assigning ~ complete
   const addTodo = (text: string): void => {
     const newTodos: ITodo[] = [...todos, { complete: false, text }]//passed empty todo array
     setTodos(newTodos); //whatever value passed from the todos array gets stored here.
   }
+
+    //handle form submit
+    const handleSubmit = (e: FormElem): void => {
+      setValue('');
+      addTodo(value) //value is added to our todos array.
+      e.preventDefault();
+    }
+  
 
   //clone of the old todo
   const completeTodo = (index: number): void => {
@@ -60,6 +62,7 @@ const App = (): JSX.Element => {
         </button>
       </form>
       <section>
+        {/* loop */}
         {todos.map((todo: ITodo, index: number) => {
           return (
             <Fragment key={index}>
