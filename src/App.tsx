@@ -10,18 +10,17 @@ interface ITodo {
 //form alias ~  type references another type 
 type FormElem = React.FormEvent<HTMLFormElement>
 
-const App = () => {
-
+const App = (): JSX.Element => {
+  //hooks
   const [value, setValue] = useState<string>('');
+  const [todos, setTodos] = useState<ITodo[]>([]);
 
   //handle form submit
   const handleSubmit = (e: FormElem): void => {
     setValue('');
-    addTodo(value) //value is added to our Todo array.
+    addTodo(value) //value is added to our addTodo array.
     e.preventDefault();
   }
-
-  const [todos, setTodos] = useState<ITodo[]>([]);
 
   //add new todo
   //& assigning ~ complete
