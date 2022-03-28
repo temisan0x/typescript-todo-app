@@ -1,19 +1,21 @@
 import React, { Fragment, useState } from 'react';
 import './App.css';
 
+
+//form alias ~  type references another type 
+type FormElem = React.FormEvent<HTMLFormElement> //generic alias for eventt
+
 //interface creates a completely new type of form element
+//NB. interface can be extended
 interface ITodo {
   text: string
   complete: boolean
 }
 
-//form alias ~  type references another type 
-type FormElem = React.FormEvent<HTMLFormElement> //generic alias for eventt
-
 const App = (): JSX.Element => {
   //hooks
   const [value, setValue] = useState<string>(''); //passed in a "string" generic 
-  const [todos, setTodos] = useState<ITodo[]>([]);
+  const [todos, setTodos] = useState<ITodo[]>([]);  //passed ITodo interface as generic
 
   //handle form submit
   const handleSubmit = (e: FormElem): void => {
